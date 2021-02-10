@@ -172,6 +172,41 @@
       "artifacts": [
         "guessTheRandomNumber"
       ]
+    },
+    "/Users/gurkaransahni/Projects/captureTheEther/contracts/guessTheNewNumber.sol": {
+      "lastModificationDate": 1612986736860,
+      "contentHash": "78d0f4259e4bc6b4fd90c1f5aa0cbb30",
+      "sourceName": "contracts/guessTheNewNumber.sol",
+      "solcConfig": {
+        "version": "0.4.21",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.4.21"
+      ],
+      "artifacts": [
+        "GuessTheNewNumberChallenge",
+        "guessTheNewNumber"
+      ]
     }
   }
 }

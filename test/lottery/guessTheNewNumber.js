@@ -75,18 +75,17 @@ const toBaseUnit = (value, decimals) => {
     return new BN(wei.toString(10), 10);
 }
 
-const contractAddress = "0x4dfdBF8756e12FDa3C53A6d5b6ED0934B786Deb5"
+const contractAddress = "0x608F37e84e3D74Ce0Cc14Dd304572F7D7d170465"
 
 const contractInst = new ethers.Contract(
     contractAddress,
     [
         "function guess(uint8 n) external payable",
-        "function answer() external returns (uint8)"
     ],
     account
 );
 
-contract ("Guess the random number", async () =>{
+contract ("Guess the new number", async () =>{
     let accounts;
     before(async () => {
         accounts = await web3.eth.getAccounts()
@@ -95,34 +94,34 @@ contract ("Guess the random number", async () =>{
         console.log(contractInst)
     })
     it("should make transaction", async () => {
-        const guessNumber = await ethers.getContractFactory("guessTheRandomNumber");
+        const guessNumber = await ethers.getContractFactory("guessTheNewNumber");
         const guessTest = await guessNumber.deploy();
-        // // console.log(guessTest)
-        // let i = await guessTest.getNumber({ from: account[0] })
-        // console.log({
-        //     i:i.toString()
-        // })
-        // if(i.toString() != "1000"){
-        //     let tx = await contractInst.guess(i, { value:  1e18.toString() });
-        //     console.log(tx)
-        // }
+        
+        // const guessAdd = "0x277fca74c6cc4410dcfb18f227e3ab7f15e65197"
+        // const guessTest = new ethers.Contract(
+        //     guessAdd,
+        //     [
+        //         "function getNumber(address target) external payable"
+        //     ],
+        //     account
+        // );
+        console.log(guessTest.address)
 
-        let block = await web3.eth.getBlock("9637331");
-        console.log(block)
+        // let block = await web3.eth.getBlock("9637331");
+        // console.log(block)
 
-        let i = await guessTest.getNumber(9637331, 1633172420, { from: account[0] })
+        // let tx = await guessTest.getNumber(contractAddress)
+        let tx = await guessTest.getNumber(contractAddress, { value:  1e18.toString() })
+        await tx.wait()
+        let i = await guessTest.answer();
         console.log({
-            i:i.toString(),
-            blockTimestamp: block.timestamp,
-            timestamp: 1633172420
+            i
         })
 
-        // let answer = await contractInst.answer();
-        // console.log({
-        //     answer: answer.toString()
-        // })
-        let tx = await contractInst.guess(53, { value:  1e18.toString() });
-        console.log(tx)
+        await guessTest.destroy();
+
+        // let tx = await contractInst.guess(53, { value:  1e18.toString() });
+        // console.log(tx)
 
     })
 })

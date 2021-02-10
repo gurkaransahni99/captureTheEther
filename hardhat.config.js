@@ -9,6 +9,8 @@ require("@nomiclabs/hardhat-ethers");
 // require('hardhat-spdx-license-identifier');
 // require("hardhat-gas-reporter");
 
+const CONFIG = require("./credentials.js");
+
 
 module.exports = {
     solidity: {
@@ -23,6 +25,10 @@ module.exports = {
                 settings: { }
             },
             "contracts/guessTheRandomNumber.sol": {
+                version: "0.4.21",
+                settings: { }
+            },
+            "contracts/guessTheNewNumber.sol": {
                 version: "0.4.21",
                 settings: { }
             }
@@ -62,6 +68,10 @@ module.exports = {
                 accountsBalance: "9999000000000000000000000000000000",
                 count: 20
             },
+        },
+        ropsten: {
+            url: `https://ropsten.infura.io/v3/${CONFIG.infura.mainEndpoint}`,
+            accounts: [`${CONFIG.wallet.PKEY}`]
         }
     }
 };
