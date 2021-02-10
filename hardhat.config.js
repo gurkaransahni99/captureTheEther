@@ -14,9 +14,15 @@ module.exports = {
     solidity: {
         compilers: [
             {
-                version: "0.7.0"
+                version: "0.7.5"
             }
         ],
+        overrides: {
+            "contracts/guessTheSecretNumber.sol": {
+                version: "0.4.21",
+                settings: { }
+            }
+        }
     },
     spdxLicenseIdentifier: {
         overwrite: true,

@@ -6,7 +6,7 @@
       "contentHash": "8e4b943890d396929e7d2875c8d47222",
       "sourceName": "contracts/Greeter.sol",
       "solcConfig": {
-        "version": "0.7.0",
+        "version": "0.7.5",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -42,7 +42,7 @@
       "contentHash": "cc4777addd464ea56fa35b1c45df0591",
       "sourceName": "hardhat/console.sol",
       "solcConfig": {
-        "version": "0.7.0",
+        "version": "0.7.5",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -76,7 +76,7 @@
       "contentHash": "ca8d6ca8a6edf34f149a5095a8b074c9",
       "sourceName": "contracts/Migrations.sol",
       "solcConfig": {
-        "version": "0.7.0",
+        "version": "0.7.5",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -103,6 +103,40 @@
       ],
       "artifacts": [
         "Migrations"
+      ]
+    },
+    "/Users/gurkaransahni/Projects/captureTheEther/contracts/guessTheSecretNumber.sol": {
+      "lastModificationDate": 1612973842592,
+      "contentHash": "e7d6ff79ae9829cac3c18d586c6f9ca9",
+      "sourceName": "contracts/guessTheSecretNumber.sol",
+      "solcConfig": {
+        "version": "0.4.21",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.4.21"
+      ],
+      "artifacts": [
+        "guessNumber"
       ]
     }
   }

@@ -8,7 +8,7 @@ const provider = new ethers.providers.WebSocketProvider(`wss://ropsten.infura.io
 
 const signer = new ethers.Wallet(CONFIG.wallet.PKEY);
 const account = signer.connect(provider);
-const contractAddress = "0x71284E09B83e9B86ec39b5E328F99206B7DC7FaD"
+const contractAddress = "0x71c46Ed333C35e4E6c62D32dc7C8F00D125b4fee"
 let name = "silent voice"
 
 const contractInst = new ethers.Contract(

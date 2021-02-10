@@ -2,3 +2,5 @@ node_modules
 package.json
 package-lock.json
 credentials.js
+cache
+artifacts
