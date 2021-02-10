@@ -1,24 +1,15 @@
 const Web3 = require("web3");
 const truffleContract = require('@truffle/contract');
-const ethers = require("ethers")
+// const ethers = require("ethers")
 const { BigNumber, utils } = require("ethers")
 
 const BN = require('bn.js');
-const CONFIG = require("../credentials.js");
+const CONFIG = require("../../credentials.js");
 
 const provider = new ethers.providers.WebSocketProvider(`wss://ropsten.infura.io/ws/v3/${CONFIG.infura.mainEndpoint}`)
 
 const signer = new ethers.Wallet(CONFIG.wallet.PKEY);
 const account = signer.connect(provider);
-const contractAddress = "0xFD9cE0DFBb8e39d5C88858163CB64025CefE6096"
-
-const contractInst = new ethers.Contract(
-    contractAddress,
-    [
-        "function guess(uint8 n) external payable"
-    ],
-    account
-);
 
 function isString(s) {
     return (typeof s === 'string' || s instanceof String)
@@ -84,7 +75,18 @@ const toBaseUnit = (value, decimals) => {
     return new BN(wei.toString(10), 10);
 }
 
-contract ("guess the number", async () =>{
+const contractAddress = "0x4dfdBF8756e12FDa3C53A6d5b6ED0934B786Deb5"
+
+const contractInst = new ethers.Contract(
+    contractAddress,
+    [
+        "function guess(uint8 n) external payable",
+        "function answer() external returns (uint8)"
+    ],
+    account
+);
+
+contract ("Guess the secret number", async () =>{
     let accounts;
     before(async () => {
         accounts = await web3.eth.getAccounts()
@@ -93,11 +95,34 @@ contract ("guess the number", async () =>{
         console.log(contractInst)
     })
     it("should make transaction", async () => {
-        let contractBal = await web3.eth.getBalance(contractInst.address)
+        const guessNumber = await ethers.getContractFactory("guessTheRandomNumber");
+        const guessTest = await guessNumber.deploy();
+        // // console.log(guessTest)
+        // let i = await guessTest.getNumber({ from: account[0] })
+        // console.log({
+        //     i:i.toString()
+        // })
+        // if(i.toString() != "1000"){
+        //     let tx = await contractInst.guess(i, { value:  1e18.toString() });
+        //     console.log(tx)
+        // }
+
+        let block = await web3.eth.getBlock("9637331");
+        console.log(block)
+
+        let i = await guessTest.getNumber(9637331, 1633172420, { from: account[0] })
         console.log({
-            contractBal: contractBal.toString()
+            i:i.toString(),
+            blockTimestamp: block.timestamp,
+            timestamp: 1633172420
         })
-        let tx = await contractInst.guess(42, { value:  1e18.toString() });
+
+        // let answer = await contractInst.answer();
+        // console.log({
+        //     answer: answer.toString()
+        // })
+        let tx = await contractInst.guess(53, { value:  1e18.toString() });
         console.log(tx)
+
     })
 })

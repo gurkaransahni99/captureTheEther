@@ -1,15 +1,24 @@
 const Web3 = require("web3");
 const truffleContract = require('@truffle/contract');
-// const ethers = require("ethers")
+const ethers = require("ethers")
 const { BigNumber, utils } = require("ethers")
 
 const BN = require('bn.js');
-const CONFIG = require("../credentials.js");
+const CONFIG = require("../../credentials.js");
 
 const provider = new ethers.providers.WebSocketProvider(`wss://ropsten.infura.io/ws/v3/${CONFIG.infura.mainEndpoint}`)
 
 const signer = new ethers.Wallet(CONFIG.wallet.PKEY);
 const account = signer.connect(provider);
+const contractAddress = "0xFD9cE0DFBb8e39d5C88858163CB64025CefE6096"
+
+const contractInst = new ethers.Contract(
+    contractAddress,
+    [
+        "function guess(uint8 n) external payable"
+    ],
+    account
+);
 
 function isString(s) {
     return (typeof s === 'string' || s instanceof String)
@@ -75,19 +84,7 @@ const toBaseUnit = (value, decimals) => {
     return new BN(wei.toString(10), 10);
 }
 
-const contractAddress = "0x3779E6b18377a3Fa4AE0318e00B1305684A3d058"
-
-const contractInst = new ethers.Contract(
-    contractAddress,
-    [
-        "function guess(uint8 n) external payable"
-    ],
-    account
-);
-
-const secretNumberHash = "0xdb81b4d58595fbbbb592d3661a34cdca14d7ab379441400cbfa1b78bc447c365"
-
-contract ("Guess the secret number", async () =>{
+contract ("guess the number", async () =>{
     let accounts;
     before(async () => {
         accounts = await web3.eth.getAccounts()
@@ -96,16 +93,11 @@ contract ("Guess the secret number", async () =>{
         console.log(contractInst)
     })
     it("should make transaction", async () => {
-        const guessNumber = await ethers.getContractFactory("guessNumber");
-        const guessTest = await guessNumber.deploy();
-        // console.log(guessTest)
-        let i = await guessTest.getNumber({ from: account[0] })
+        let contractBal = await web3.eth.getBalance(contractInst.address)
         console.log({
-            i:i.toString()
+            contractBal: contractBal.toString()
         })
-        if(i.toString() != "1000"){
-            let tx = await contractInst.guess(i, { value:  1e18.toString() });
-            console.log(tx)
-        }
+        let tx = await contractInst.guess(42, { value:  1e18.toString() });
+        console.log(tx)
     })
 })

@@ -106,8 +106,8 @@
       ]
     },
     "/Users/gurkaransahni/Projects/captureTheEther/contracts/guessTheSecretNumber.sol": {
-      "lastModificationDate": 1612973842592,
-      "contentHash": "e7d6ff79ae9829cac3c18d586c6f9ca9",
+      "lastModificationDate": 1612976764779,
+      "contentHash": "a3b464dfeda45d825e67e3d857e35be7",
       "sourceName": "contracts/guessTheSecretNumber.sol",
       "solcConfig": {
         "version": "0.4.21",
@@ -136,7 +136,41 @@
         "^0.4.21"
       ],
       "artifacts": [
-        "guessNumber"
+        "guessTheSecretNumber"
+      ]
+    },
+    "/Users/gurkaransahni/Projects/captureTheEther/contracts/guessTheRandomNumber.sol": {
+      "lastModificationDate": 1612976755645,
+      "contentHash": "43a06e5fd33b491da407bf446915096a",
+      "sourceName": "contracts/guessTheRandomNumber.sol",
+      "solcConfig": {
+        "version": "0.4.21",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.4.21"
+      ],
+      "artifacts": [
+        "guessTheRandomNumber"
       ]
     }
   }

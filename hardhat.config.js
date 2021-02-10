@@ -21,6 +21,10 @@ module.exports = {
             "contracts/guessTheSecretNumber.sol": {
                 version: "0.4.21",
                 settings: { }
+            },
+            "contracts/guessTheRandomNumber.sol": {
+                version: "0.4.21",
+                settings: { }
             }
         }
     },
