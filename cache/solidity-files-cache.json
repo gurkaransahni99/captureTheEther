@@ -347,6 +347,40 @@
         "TokenWhale",
         "TokenWhaleChallenge"
       ]
+    },
+    "/Users/gurkaransahni/Projects/captureTheEther/contracts/retirementFund.sol": {
+      "lastModificationDate": 1613239161414,
+      "contentHash": "9a7e9d1e3924cb69800239d3d060f0c4",
+      "sourceName": "contracts/retirementFund.sol",
+      "solcConfig": {
+        "version": "0.4.21",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.4.21"
+      ],
+      "artifacts": [
+        "RetirementFund"
+      ]
     }
   }
 }

@@ -47,6 +47,10 @@ module.exports = {
             "contracts/tokenWhale.sol": {
                 version: "0.4.21",
                 settings: { }
+            },
+            "contracts/retirementFund.sol": {
+                version: "0.4.21",
+                settings: { }
             }
         }
     },
