@@ -207,6 +207,111 @@
         "GuessTheNewNumberChallenge",
         "guessTheNewNumber"
       ]
+    },
+    "/Users/gurkaransahni/Projects/captureTheEther/contracts/predictTheFuture.sol": {
+      "lastModificationDate": 1613076822641,
+      "contentHash": "bde736d1b27893009ce581436e3865d3",
+      "sourceName": "contracts/predictTheFuture.sol",
+      "solcConfig": {
+        "version": "0.4.21",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.4.21"
+      ],
+      "artifacts": [
+        "PredictTheFutureChallenge",
+        "predictTheFuture"
+      ]
+    },
+    "/Users/gurkaransahni/Projects/captureTheEther/contracts/predictTheBlockHash.sol": {
+      "lastModificationDate": 1613197492757,
+      "contentHash": "1e20b583c354523a5888e84d210c1eb8",
+      "sourceName": "contracts/predictTheBlockHash.sol",
+      "solcConfig": {
+        "version": "0.4.21",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.4.21"
+      ],
+      "artifacts": [
+        "PredictTheBlockHashChallenge",
+        "predictTheBlockHash"
+      ]
+    },
+    "/Users/gurkaransahni/Projects/captureTheEther/contracts/tokenSale.sol": {
+      "lastModificationDate": 1613204732951,
+      "contentHash": "23722f99ff705dfebe06623bcebfb0c7",
+      "sourceName": "contracts/tokenSale.sol",
+      "solcConfig": {
+        "version": "0.4.21",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.4.21"
+      ],
+      "artifacts": [
+        "TokenSale",
+        "TokenSaleChallenge"
+      ]
     }
   }
 }

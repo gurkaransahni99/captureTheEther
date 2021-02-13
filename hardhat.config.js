@@ -31,6 +31,18 @@ module.exports = {
             "contracts/guessTheNewNumber.sol": {
                 version: "0.4.21",
                 settings: { }
+            },
+            "contracts/predictTheFuture.sol": {
+                version: "0.4.21",
+                settings: { }
+            },
+            "contracts/predictTheBlockHash.sol": {
+                version: "0.4.21",
+                settings: { }
+            },
+            "contracts/tokenSale.sol": {
+                version: "0.4.21",
+                settings: { }
             }
         }
     },
