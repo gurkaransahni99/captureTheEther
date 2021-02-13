@@ -312,6 +312,41 @@
         "TokenSale",
         "TokenSaleChallenge"
       ]
+    },
+    "/Users/gurkaransahni/Projects/captureTheEther/contracts/tokenWhale.sol": {
+      "lastModificationDate": 1613210353216,
+      "contentHash": "7ed6beec45e09a785ca2c771fbf41b4a",
+      "sourceName": "contracts/tokenWhale.sol",
+      "solcConfig": {
+        "version": "0.4.21",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.4.21"
+      ],
+      "artifacts": [
+        "TokenWhale",
+        "TokenWhaleChallenge"
+      ]
     }
   }
 }

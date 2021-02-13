@@ -43,6 +43,10 @@ module.exports = {
             "contracts/tokenSale.sol": {
                 version: "0.4.21",
                 settings: { }
+            },
+            "contracts/tokenWhale.sol": {
+                version: "0.4.21",
+                settings: { }
             }
         }
     },
